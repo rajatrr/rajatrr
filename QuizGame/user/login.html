@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div class="login-form">
+<h2>Login</h2>
+<form>
+<div class="inner">
+<h5> User Name:</h5>
+<input type="text" name="firstname">
+</div>
+<div class="inner">
+<h5> Password:</h5>
+<input type="text" name="lastname">
+</div>
+<div class="inner text-right">
+<a href="register.html"> Forgot Password</a>
+</div>
+<div class="inner">
+<button class="button"> Submit</button>
+</div>
+<div class="inner text-center">
+<a href="register.html"> Register ?</a>
+</div>
+</form>
+</div>
+<script>
+patternMatch : function (data, pattern, name, message){
+$(".validationMessage").empty();
+if(data.match(pattern)){
+$('input[name='+name+']').after("<span class='validationMessage' style='color:red;'>"+message+"</span>);
+return false;
+}
+return true;
+},
+same : function (data, secdata, name, message){
+$(".validationMessage").empty();
+if(data != secdata){
+$('input[name='+name+']').after("<span class='validationMessage' style='color:red;'>"+message+"</span>);
+return false;
+}
+return true;
+},
+</script>
+</body>
+</html>
